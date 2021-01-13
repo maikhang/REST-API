@@ -1,35 +1,39 @@
 
-exports.getAllUser = (req, res) => {
-    res.status(500).json({
-        status: 'err',
-        message: 'This Route is not defined'
-    });
+class userController {
+    getAllUser = (req, res) => {
+        res.status(500).json({
+            status: 'err',
+            message: 'This Route is not defined'
+        });
+    }
+
+    getUser = (req, res) => {
+        res.status(500).json({
+            status: 'err',
+            message: 'This Route is not defined'
+        });
+    }
+
+    createNewUser = (req, res) => {
+        res.status(500).json({
+            status: 'err',
+            message: 'This Route is not defined'
+        });
+    }
+
+    updateUser = (req, res) => {
+        res.status(500).json({
+            status: 'err',
+            message: 'This Route is not defined'
+        });
+    }
+
+    deleteUser = (req, res) => {
+        res.status(500).json({
+            status: 'err',
+            message: 'This Route is not defined'
+        });
+    }
 }
 
-exports.getUser = (req, res) => {
-    res.status(500).json({
-        status: 'err',
-        message: 'This Route is not defined'
-    });
-}
-
-exports.createNewUser = (req, res) => {
-    res.status(500).json({
-        status: 'err',
-        message: 'This Route is not defined'
-    });
-}
-
-exports.updateUser = (req, res) => {
-    res.status(500).json({
-        status: 'err',
-        message: 'This Route is not defined'
-    });
-}
-
-exports.deleteUser = (req, res) => {
-    res.status(500).json({
-        status: 'err',
-        message: 'This Route is not defined'
-    });
-}
+module.exports = new userController;
