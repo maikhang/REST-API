@@ -15,6 +15,16 @@ class tourController {
         next();
     }
 
+    postMiddleware = (req, res, next) => {
+        if (!req.body.name || !req.body.price) {
+            res.status(400).json({
+                status: 'failed',
+                message: 'Name or Price not defined'
+            });
+        }
+        next();
+    }
+
     getAllTour = (req, res, next) => {
         res.status(200).json({
             status: 'success',
