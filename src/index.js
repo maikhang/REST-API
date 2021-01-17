@@ -1,15 +1,20 @@
+// Express Module
 const express = require('express');
+
 const app = express();
 
-//Route
-app.get('/', (req, res, next) => {
-    res
-        .status(200)
-        .json({ message: 'hello world!!!', app: 'natours' });
-});
+// Helper Module
+const morgan = require('morgan');
 
-//Listen Port
-const port = 3000;
-app.listen(port, () => {
-    console.log('Start in port 3000');
-});
+/*------------MIDDLEWARE------------*/
+app.use(morgan('combined'));
+app.use(express.json());
+app.use(express.static(`${__dirname}/public`));
+
+/*------------ROUTE------------*/
+const route = require('./routes');
+
+route(app);
+
+//Export
+module.exports = app;
